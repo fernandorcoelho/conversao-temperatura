@@ -63,5 +63,5 @@ jobs:
         file: ./src/Dockerfile
         push: true
         tags: |
-          nandoeab/conversao-temperatura:v1
+          nandoeab/conversao-temperatura:${{ github.run_number }}
           nandoeab/conversao-temperatura:latest
