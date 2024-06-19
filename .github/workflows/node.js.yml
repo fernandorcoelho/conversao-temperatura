@@ -29,7 +29,7 @@ jobs:
         cache: 'npm'
         cache-dependency-path: './src/package-lock.json'
     - name: Instalação do Mocha e dos pacotes para teste
-    - run: |
+      run: |
         cd src;
         npm install -g mocha;
         npm install;
