@@ -22,12 +22,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Setup do Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: './src/package-lock.json'
+    - name: Instalação do Mocha e dos pacotes para teste
+    - run: |
+        cd src;
+        npm install -g mocha;
+        npm install;
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
