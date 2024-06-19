@@ -28,11 +28,20 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: './src/package-lock.json'
+
+    # Adiciona uma etapa para verificar a versão do Node.js instalada
+    - name: Verifica a versão do Node.js
+      run: node -v
+
+    # Adiciona uma etapa para verificar a versão do npm instalada
+    - name: Verifica a versão do npm
+      run: npm -v
+        
     - name: Instalação do Mocha e dos pacotes para teste
       run: |
-        cd src;
-        npm install -g mocha;
-        npm install;
+        cd src
+        npm install -g mocha
+        npm install
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
