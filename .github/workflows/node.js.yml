@@ -51,8 +51,8 @@ jobs:
       # uses: docker/build-push-action@94f8f8c2eec4bc3f1d78c1755580779804cb87b2
       uses: docker/build-push-action@v6.0.1
       with:
-        context: src
-        file: Dockerfile
+        context: ./src
+        file: ./src/Dockerfile
         push: true
         tags: |
           nandoeab/conversao-temperatura:v1
